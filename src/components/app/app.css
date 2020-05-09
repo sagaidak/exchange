@@ -1,0 +1,61 @@
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  background: #FBFCFF;
+}
+
+.form_wrapper {
+  max-width: 754px;
+  height: 344px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+
+.button {
+  width: 125px;
+  height: 48px;
+  background: #58B4AE;
+  border-radius: 4px;
+
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  border: 0;
+  cursor: pointer;
+}
+
+h2 {
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  color: #3A3A3A;
+}

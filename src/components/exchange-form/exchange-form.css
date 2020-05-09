@@ -1,0 +1,58 @@
+
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.row-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.col:first-child {
+  margin-right: 64px;
+}
+
+input, select {
+  border: 1px solid #CBCBCB;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 313px;
+  height: 46px;
+  background: transparent;
+
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #3A3A3A;
+  padding: 0 20px;
+}
+select {
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+.spinner {
+  position: relative;
+}
+.spinner .loader {
+  position: absolute;
+  right: 20px;
+  top: -24px;
+}

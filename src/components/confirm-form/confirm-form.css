@@ -1,0 +1,22 @@
+.form_wrapper.confirm {
+  width: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form_wrapper.confirm .row:last-child {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button.cancel {
+  background: #FFFFFF;
+  box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+  color: #3A3A3A;
+  border: 1px solid #58B4AE;
+}
+
+.base {
+  color: #818181;
+}
