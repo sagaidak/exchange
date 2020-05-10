@@ -7,6 +7,7 @@ import { PayMethod, Base, CalculateQuery } from '../../services/involve-api-serv
 import { Redirect } from 'react-router-dom'
 import { State, PayMethodsState, BidState } from '../../reducers'
 import Spinner from '../spinner/spinner'
+import Select from '../select/select'
 
 interface Props {
   payMethods: PayMethodsState
@@ -53,8 +54,9 @@ const ExchangeForm = (props: Props) => {
     fetchValue(query)
   }
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>, field: Base) => {
-    changeMethod(e.currentTarget.value, field)
+  const handleSelectChange = (v: string, field: Base) => {
+    changeMethod(v, field)
+    clearInputs()
   }
 
   const handleSubmit = () => {
@@ -67,9 +69,9 @@ const ExchangeForm = (props: Props) => {
 
     return <div className='col'>
       <h2>{field === 'invoice' ? 'Sell' : 'Buy'}</h2>
-      <select onChange={(e) => handleSelectChange(e, field)} value={bid[field].methodId}>
-        {payMethods[field].map((x: PayMethod) => <option key={x.id} value={x.id}>{x.name}</option>)}
-      </select>
+      <Select 
+        onChange={(v: string) => handleSelectChange(v, field)} 
+        options={payMethods[field]} />
       <input type="text" value={bid[field].amount} onChange={(e) => handleInputChange(e, field)} />
       {bid[field].isLoading && <div className='spinner'><Spinner /></div>}
     </div>
