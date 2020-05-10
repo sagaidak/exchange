@@ -10,14 +10,13 @@ import store from './store';
   Здарвствуйте, 
   напишите пожалуйста фидбек.
 
-  Старался использовать как можно меньше библиотек:
-  только react, redux, react-redux
+  Старался использовать как можно меньше библиотек
 */
 
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundry>
-        <Router>
+        <Router basename='/exchange/'>
           <App />
         </Router>
     </ErrorBoundry>
