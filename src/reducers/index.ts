@@ -54,6 +54,7 @@ const reducer = (state = initialState, action: ActionTypes) => {
     case CHANGE_METHOD:
       const { base, methodId } = action.payload
       const methodName = state.payMethods[base].find((x) => x.id.toString() === methodId)?.name
+
       return {...state, bid: {
           ...state.bid,
           [base]: { ...state.bid[base], methodId, methodName }
