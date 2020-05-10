@@ -3,7 +3,7 @@ import './exchange-form.css'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { fetchPayMethods, changeMethod, fetchValue, ChangeMethod, clearInputs, ClearInputs } from '../../actions'
-import { PayMethod, Base, CalculateQuery } from '../../services/involve-api-service'
+import { Base, CalculateQuery } from '../../services/involve-api-service'
 import { Redirect } from 'react-router-dom'
 import { State, PayMethodsState, BidState } from '../../reducers'
 import Spinner from '../spinner/spinner'
@@ -35,7 +35,7 @@ const ExchangeForm = (props: Props) => {
   useEffect(() => {
     clearInputs()
     fetchPayMethods()
-  }, [fetchPayMethods])
+  }, [fetchPayMethods, clearInputs])
 
   if (redirect) return <Redirect to="/confirm" />
 

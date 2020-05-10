@@ -15,7 +15,7 @@ const SuccessForm = (props: Props) => {
   if (success.message === '') return <Redirect to='/' />
 
   return <div className='form_wrapper success'>
-    <img src={icon} />
+    <img src={icon} alt='Success'/>
     <h2>{success.message}</h2>
     <div>
       Your exchange order has been placed successfully and will be processed soon.
