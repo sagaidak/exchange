@@ -39,8 +39,7 @@ const ExchangeForm = (props: Props) => {
 
   if (redirect) return <Redirect to="/confirm" />
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, field: Base) => {
-    const v = e.currentTarget.value
+  const handleInputChange = (v: string, field: Base) => {
 
     if (!Number(v) && v !== '') return
 
@@ -72,7 +71,7 @@ const ExchangeForm = (props: Props) => {
       <Select 
         onChange={(v: string) => handleSelectChange(v, field)} 
         options={payMethods[field]} />
-      <input type="text" value={bid[field].amount} onChange={(e) => handleInputChange(e, field)} />
+      <input type="text" value={bid[field].amount} onChange={(e) => handleInputChange(e.currentTarget.value, field)} />
       {bid[field].isLoading && <div className='spinner'><Spinner /></div>}
     </div>
   }

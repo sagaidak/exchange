@@ -1,5 +1,7 @@
 // API BASE URL: https://involve-it.com/test_front/api (CORS are allowed)
 
+import debounce from "lodash.debounce"
+
 // Method: GET
 // URI: /payMethods
 
@@ -70,9 +72,13 @@ export default class InvolveApiService {
     return await this.fetchData('/payMethods')
   }
 
-  calculate = async (query: CalculateQuery) => {
+  calculate1 = async (query: CalculateQuery) => {
     return await this.fetchData(`/payMethods/calculate?amount=${query.amount.toString()}&base=${query.base.toString()}&invoicePayMethod=${query.invoicePayMethod.toString()}&withdrawPayMethod=${query.withdrawPayMethod.toString()}`)
   }
+
+  calculate = debounce(this.calculate1, 1000, {
+    'leading': true
+  })
 
   createBid = async (query: CreateBidQuery) => {
     return await this.postData('/bids', query)
